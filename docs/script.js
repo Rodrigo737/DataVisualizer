@@ -129,11 +129,16 @@ $("document").ready(function(){//on document boot, load in default CSV file
     //console.log(fileName);
     $.ajax({
         type: "GET",
-        url: "US_Info.csv",
+        url: "population_usafacts.csv",
         dataType: "text",
         success: function(data) {
-          processData(data);
-        }
+          //processData(data);
+          console.log("AJAX SUCCESS");
+          console.log(data);
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+        }       
       });
     printMessage("Welcome to Rodrigo's Data Visualization Project, a defualt CSV file has been loaded."); 
 });
