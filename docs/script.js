@@ -5,27 +5,22 @@ function printMessage(mess){
     document.getElementById('messageOutput').innerHTML = '';
     document.getElementById('messageOutput').append(mess);    
 }
-
 function exitSite(){
     close();
 }
-
 function displayProjectInfo(){                                       
     alert('Rodrigo Dutra' + '\n' + 'Data Visualization Project' + '\n');  
 }
-
 function displayClientInfo(){    
     alert('Browser: ' + navigator.appCodeName + '\n' + 'Version: ' +  navigator.appVersion +  '\n' + 'Operating System: ' + navigator.platform + '\n' + 'Java Enabled: ' + navigator.javaEnabled() + '\n' + 'Cookies enabled: ' + navigator.cookieEnabled);
 
 }
 function displayGraph(event, option){          //checks user input of 4 tabs, displays proper graph
-
     /*   INPUT CODE HERE
         ALSO
             EACH OPTION SHOULD LOAD THE NEW GOOGLE CHART WHEN SELECTED
             ALSO SHOULD KEEP BUTTON HIGHLIGHTED AND REMOVE PREVIOUS GRAPH/DISPLAY WHEN CHANGED\
     */
-
     document.getElementById('Table').style.display = "none";//hides all elements
     document.getElementById('Pie').style.display = "none";
     document.getElementById('Bar').style.display = "none";
@@ -109,7 +104,7 @@ function createTable(tableData){                                  //Display tabl
        var options = {       
        width: 1440,
        height: 720};
-       var table = new google.visualization.Table(document.getElementById('tableArea'));
+       var table = new google.visualization.Table(document.getElementById('Table'));
        table.draw(data, options);
     }
 }
@@ -137,7 +132,8 @@ $("document").ready(function(){//on document boot, load in default CSV file
           console.log(data);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) { 
-            alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+            console.log ("ajax failed");
+            console.log("Status: " + textStatus); alert("Error: " + errorThrown); 
         }       
       });
     printMessage("Welcome to Rodrigo's Data Visualization Project, a defualt CSV file has been loaded."); 
