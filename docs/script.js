@@ -92,9 +92,9 @@ function processData(csv){
             col.push(row[j]);
         }
         csvArray.push(col);
-    }
-    fileUploaded = true;                        
-    createTable(csvArray);
+    }      
+    console.log("CSV AFTER CLEANING", csvArray);              
+    //createTable(csvArray);
 }
 function createTable(tableData){                                  //Display table for CSV FILE 
     google.charts.load('current', {'packages':['table']});	
@@ -127,9 +127,9 @@ $("document").ready(function(){//on document boot, load in default CSV file
         url: "https://raw.githubusercontent.com/Rodrigo737/DataVisualizer/main/population_usafacts.csv",
         dataType: "text",
         success: function(data) {
-          //processData(data);
           console.log("AJAX SUCCESS");
           console.log(data);
+	  processData(data);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) { 
             console.log ("ajax failed");
