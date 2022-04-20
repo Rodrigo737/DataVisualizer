@@ -112,7 +112,8 @@ function createTable(tableData){                                  //Display tabl
 
 function createPie(tableData){                                  //Population by state in current year (PIE)   rows 10-60
     let pieData = [];
-    let row = [];
+    let row = ["State", "Population"];           //adds header
+    pieData.push(row);
     for(let i = 10; i < 60; i++ ){
         let row = [];
         let state = tableData[i][0];
