@@ -40,28 +40,24 @@
     <div id = "messageBox">
         <p id = "messageOutput"></p>
     </div>
-
+<!----
     <div id = "inputSelectionBox">
         <div id ="sliders">
             <label for="wageSlider"></label>
-            <input type="range" id="wageSlider" min="0" max="1"><br>
+            <input class ="slider" type="range" id="wageSlider" min="0" max="10"><br>
             <label for="populationSlider"></label>
-            <input type="range" id="populationSlider" min="0" max="1 ">
-        </div>
-        <div id="radioGroup">
-            <input type="radio" autocomplete="off" name="dataType" value="AvgWages" id="AvgWages"><label for="AvgWages">Average Wages(Bar, Line)</label><br>
-            <input type="radio" autocomplete="off" name="dataType" value="EstPopulation" id="EstPopulation"><label for="EstPopulation">Estimated Population(Bar, Line)</label><br>
-            <input type="radio" autocomplete="off" name="dataType" value="totalWages" id="totalWages"><label for="totalWages">State(Bar, Pie)</label> 
+            <input class ="slider" type="range" id="populationSlider" min="0" max="10">
         </div>
     </div>
+--->
     <div class = "tab">
-        <button class="tabButton" onclick="displayGraph('Table')">Table</button>
-        <button class="tabButton" onclick="displayGraph('Pie')">Pie Chart</button>
-        <button class="tabButton" onclick="displayGraph('Bar')">Bar Chart</button>
-        <button class="tabButton" onclick="displayGraph('Line')">Line Chart</button>
+        <button class="tabButton" id="buttonTable" onclick="displayGraph(event, 'Table')">Table</button>
+        <button class="tabButton" id="buttonPie" onclick="displayGraph(event, 'Pie')">Pie Chart</button>
+        <button class="tabButton" id="buttonBar" onclick="displayGraph(event, 'Bar')">Bar Chart</button>
+        <button class="tabButton" id="buttonLine" onclick="displayGraph(event, 'Line')">Line Chart</button>
     </div>
-    <div class = "chartDisplay" id = "chartTable">Table</div>
-    <div class = "chartDisplay" id = "chartPie">Pie</div>
-    <div class = "chartDisplay" id = "chartBar">Bar</div>
-    <div class = "chartDisplay" id = "chartLine">Line</div>
+    <div class = "chartDisplay" id = "Table">Table</div>
+    <div class = "chartDisplay" id = "Pie">Pie</div>
+    <div class = "chartDisplay" id = "Bar">Bar</div>
+    <div class = "chartDisplay" id = "Line">Line</div>
 </body>

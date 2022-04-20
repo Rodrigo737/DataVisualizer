@@ -1,7 +1,6 @@
 //no login needed
 //automatically read csv file 
 //has one preset and one CAN BE LLOADED by user
-import 
 function printMessage(mess){
     document.getElementById('messageOutput').innerHTML = '';
     document.getElementById('messageOutput').append(mess);    
@@ -18,6 +17,40 @@ function displayProjectInfo(){
 function displayClientInfo(){    
     alert('Browser: ' + navigator.appCodeName + '\n' + 'Version: ' +  navigator.appVersion +  '\n' + 'Operating System: ' + navigator.platform + '\n' + 'Java Enabled: ' + navigator.javaEnabled() + '\n' + 'Cookies enabled: ' + navigator.cookieEnabled);
 
+}
+function displayGraph(event, option){          //checks user input of 4 tabs, displays proper graph
+
+    /*   INPUT CODE HERE
+        ALSO
+            EACH OPTION SHOULD LOAD THE NEW GOOGLE CHART WHEN SELECTED
+            ALSO SHOULD KEEP BUTTON HIGHLIGHTED AND REMOVE PREVIOUS GRAPH/DISPLAY WHEN CHANGED\
+    */
+
+    document.getElementById('Table').style.display = "none";//hides all elements
+    document.getElementById('Pie').style.display = "none";
+    document.getElementById('Bar').style.display = "none";
+    document.getElementById('Line').style.display = "none";
+    tabButton = document.getElementsByClassName("tabButton");
+    for (i = 0; i < tabButton.length; i++) {
+        tabButton[i].className = tabButton[i].className.replace(" active", "");         //clears all selected tabs
+    }
+    document.getElementById(option).style.display = "block";                            //changes the selected tab to give it the active tag
+    event.currentTarget.className += " active";
+  
+    switch(option){
+        case 'Table':
+        document.getElementById('')
+        break;
+        case 'Pie':
+
+        break;
+        case 'Bar':
+
+        break;
+        case 'Line':
+        
+        break; 
+    }
 }
 function handleFile(input){                      //check that file is a csv and browser can handle it                                     
     if(input){
@@ -80,16 +113,27 @@ function createTable(tableData){                                  //Display tabl
        table.draw(data, options);
     }
 }
-$("document").ready(function(){//on document boot, load in default CSV file 
+/*
+    load a csv file when document loads
+    automatically display table         no website to set this as default tab
+    function that creates 4 google charts when switched between 
     
-    let fileName[] = 'US_Info.csv';     //get file from server, hosted on github when live. test there and upload it 
-    console.log(fileName);
+    DATA OPTIONS WITH THIS NEW POPULATION CSV
+    Population by state in current year (PIE)   lines 13-63  
+    General pop by year (LINE)                  lines 1-2
+    General pop by AGE of current year (BAR) lines 4-11
+
+
+*/
+$("document").ready(function(){//on document boot, load in default CSV file 
+    //console.log(fileName);
     $.ajax({
         type: "GET",
-        url: "DataVisualizer/US_Info.csv",
+        url: "US_Info.csv",
         dataType: "text",
         success: function(data) {
           processData(data);
         }
       });
+    printMessage("Welcome to Rodrigo's Data Visualization Project, a defualt CSV file has been loaded."); 
 });

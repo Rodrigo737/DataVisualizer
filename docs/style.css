@@ -1,6 +1,5 @@
 *{
     margin: 0;
-    
     font-family: Arial, Helvetica, sans-serif;    
     text-decoration: none;
 }
@@ -61,7 +60,7 @@ li a, .menuButtonLoggedIn{
     margin-left: 80px;
     margin-top: 20px;
     z-index: 1 ;
-    font-weight:bold;
+    font-weight: 300px;
     padding: 8px;
 }
 #inputSelectionBox{
@@ -77,30 +76,41 @@ li a, .menuButtonLoggedIn{
 }
 .tab {
     overflow: hidden;
-    border: 1px solid rgb(228, 152, 176, 0.5);
     width: 80%;
-    margin: 20px;
-    margin-left: 80px;
+    margin-top: 20px;
+    margin-left: 70px;
     padding: 8px;
 }
 .tabButton{
-  background-color: inherit;
-  bordeR: none;
- /*border: 1px solid rgb(228, 152, 176, 0.5);*/
-  outline: none;
-  float: left;
-  padding: 14px 16px;
+    font-family: Arial, Helvetica, sans-serif;   
+    font-size: 18px; 
+    font-weight: 200;
+    background-color: inherit;
+    bordeR: none;
+    /*border: 1px solid rgb(228, 152, 176, 0.5);*/
+    outline: none;
+    float: left;
+    padding: 14px 16px;
 }
 .tab button:hover {
-    background-color: rgb(78, 96, 104);
+    background-color: #4e6068;
     color: whitesmoke;
 }
+.tab button.active {
+    background-color: #69787f;
+    color: whitesmoke;
+  }
 .chartDisplay{
     display: none;
     border: 1px groove rgb(228, 152, 176, 0.5);
     height: 720px;
     width: 80%;
-    margin: 20px;
     margin-left: 80px;
     padding: 8px;
+}
+.slider{
+    -webkit-appearance: none;
+    background: #d3d3d3;
+    opacity: 0.7;
+    transition: opacity .2s;
 }
