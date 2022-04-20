@@ -94,7 +94,7 @@ function processData(csv){
         csvArray.push(col);
     }      
     console.log("CSV AFTER CLEANING", csvArray);              
-    //createTable(csvArray);
+    createTable(csvArray);
 }
 function createTable(tableData){                                  //Display table for CSV FILE 
     google.charts.load('current', {'packages':['table']});	
