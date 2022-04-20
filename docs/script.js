@@ -117,8 +117,8 @@ function createPie(tableData){                                  //Population by 
     let row = [];
     for(let i = 12; i< 63; i++){
         let row = [];
-        row.push(tableData[i, 0]);
-        row.push(tableData[i,121]); 
+        row.push(tableData[0, i]);
+        row.push(tableData[121, i]); 
         pieData.push(row);
     }
     console.log("PIE DATA");
