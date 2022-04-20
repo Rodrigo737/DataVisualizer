@@ -115,14 +115,16 @@ function createPie(tableData){                                  //Population by 
     //use column #0 for state and #121 for year 2020
     let pieData = [];
     let row = [];
-    for(let i = 12; i< 63; i++){
+    for(let i = 9; i < 59; i++ ){
         let row = [];
-        row.push(tableData[i] [0]);
-        row.push(tableData[i] [121]); 
+        let state = tableData[i][0];
+        let pop = tableData[i][121]; 
+        row.push(state);
+        row.push(pop);
         pieData.push(row);
     }
     console.log("PIE DATA");
-    console.log(pieData);   
+    console.log(pieData);
 }
 
 
@@ -146,7 +148,6 @@ $("document").ready(function(){//on document boot, load in default CSV file
         dataType: "text",
         success: function(data) {
           console.log("AJAX SUCCESS");
-          console.log(data);
 	  processData(data);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) { 
