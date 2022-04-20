@@ -110,15 +110,13 @@ function createTable(tableData){                                  //Display tabl
     }
 }
 
-function createPie(tableData){                                  //Population by state in current year (PIE)   rows 12-62  
-    //clean array to fit into pie creator
-    //use column #0 for state and #121 for year 2020
+function createPie(tableData){                                  //Population by state in current year (PIE)   rows 10-60
     let pieData = [];
     let row = [];
     for(let i = 10; i < 60; i++ ){
         let row = [];
         let state = tableData[i][0];
-        let pop = number(tableData[i][121]); 
+        let pop = Number(tableData[i][121]); 
         row.push(state);
         row.push(pop);
         pieData.push(row);
