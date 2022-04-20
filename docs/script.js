@@ -122,6 +122,7 @@ function createPie(tableData){                                  //Population by 
         row.push(state);
         row.push(pop);
         pieData.push(row);
+	console.log(row);
     }
     console.log("PIE DATA");
     console.log(pieData);
