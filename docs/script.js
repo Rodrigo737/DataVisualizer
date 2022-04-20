@@ -124,7 +124,7 @@ $("document").ready(function(){//on document boot, load in default CSV file
     //console.log(fileName);
     $.ajax({
         type: "GET",
-        url: "population_usafacts.csv",
+        url: "https://raw.githubusercontent.com/Rodrigo737/DataVisualizer/main/population_usafacts.csv",
         dataType: "text",
         success: function(data) {
           //processData(data);
