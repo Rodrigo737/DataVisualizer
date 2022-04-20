@@ -115,7 +115,7 @@ function createPie(tableData){                                  //Population by 
     //use column #0 for state and #121 for year 2020
     let pieData = [];
     let row = [];
-    for(let i = 12; i++; i< 63){
+    for(let i = 12; i< 63; i++){
         let row = [];
         row.push(tableData[i, 0]);
         row.push(tableData[i,121]); 
