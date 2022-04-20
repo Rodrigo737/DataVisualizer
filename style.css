@@ -5,33 +5,32 @@
     text-decoration: none;
 }
 #navBar{
-    background-color: #37474f;
+    background-color: rgb(78, 96, 104);
     width: 100%;
     height: 56px;
     z-index: 2;
     position: relative;
     color: white;
-    
 }
 ul{
     display: flex;
-    background-color: #37474f;
+    background-color: rgb(78, 96, 104);
 }
 li a, .menuButton{
     text-decoration: none;
-    background-color: #37474f;
+    background-color: rgb(78, 96, 104);
     z-index:2;
     color: whitesmoke;
 }
 li a, .menuButtonLoggedIn{
     text-decoration: none;
-    background-color: #37474f;
+    background-color: rgb(78, 96, 104);
     z-index:2;
     color: whitesmoke;
 }
 .dropdown{    
     color: whitesmoke;
-    background-color: #37474f;
+    background-color: rgb(78, 96, 104);
     position:relative;
     display:inline-block;
     list-style: none;
@@ -43,47 +42,22 @@ li a, .menuButtonLoggedIn{
 }
 .dropdown:hover .dropdown-content{
     display:block;
-    background-color: #37474f;
+    background-color: rgb(78, 96, 104);
     z-index: 2;
     color: whitesmoke;
 }
 .dropdown-content{
     display: none;
     position: absolute;
-    background-color: #37474f;
+    background-color: rgb(78, 96, 104);
     padding: 8px;
     font-size: 20px;
     z-index: 2;
 }
-#loginBox{
-    box-shadow: 0 0 40px rgba(black,0.3);
-    background-color: white;
-    border-style: groove;
-    border-radius: 20%;
-    height:250px;
-    width:325px;
-    display: none;
-    z-index: 5;
-    padding:30;
-    margin:auto;
-    margin-top:200px;
-    position: fixed;    
-    top:25%;
-    left:36%;
-}
-#loginForm{
-    margin-top: 40px;
-    text-align: center;
-    line-height: 1.8;
-    color:#132731;
-    font-size: 14;
-    padding:30;
-}
 #messageBox{
     height: 36px;
     width: 80%;
-    border-style: groove;
-    border-color: #E498B0;
+    border: 1px groove rgb(228, 152, 176, 0.5);
     margin-left: 80px;
     margin-top: 20px;
     z-index: 1 ;
@@ -93,8 +67,7 @@ li a, .menuButtonLoggedIn{
 #inputSelectionBox{
     height: 110px;
     width: 80%;
-    border-style: groove;
-    border-color: #E498B0;
+    border: 1px groove rgb(228, 152, 176, 0.5);
     margin: 20px;
     margin-left: 80px;
     padding: 8px;
@@ -102,38 +75,32 @@ li a, .menuButtonLoggedIn{
     z-index: 1 ;
     font-weight:bold;
 }
-#graphArea{
-    Width:80%;
-    Height: 620px;
-    border-style: groove;
-    border-color: #E498B0;
+.tab {
+    overflow: hidden;
+    border: 1px solid rgb(228, 152, 176, 0.5);
+    width: 80%;
     margin: 20px;
     margin-left: 80px;
     padding: 8px;
 }
-#graph1{
-    float:left;
-    border-style: groove;
-    border-color: #E498B0;
-    height: 575px;
-    width: 49%;
+.tabButton{
+  background-color: inherit;
+  bordeR: none;
+ /*border: 1px solid rgb(228, 152, 176, 0.5);*/
+  outline: none;
+  float: left;
+  padding: 14px 16px;
 }
-#graph2{
-
-    float:right;
-    border-style: groove;
-    border-color: #E498B0;
-    height: 575px;
-    width: 49%;
+.tab button:hover {
+    background-color: rgb(78, 96, 104);
+    color: whitesmoke;
 }
-
-#tableArea{
-    width:80%;
-    Height: 620px;
-    border-style: groove;
-    border-color: #E498B0;
+.chartDisplay{
+    display: none;
+    border: 1px groove rgb(228, 152, 176, 0.5);
+    height: 720px;
+    width: 80%;
     margin: 20px;
     margin-left: 80px;
     padding: 8px;
-    
 }
