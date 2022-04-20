@@ -34,7 +34,7 @@ function displayGraph(event, option){          //checks user input of 4 tabs, di
   
     switch(option){
         case 'Table':
-        document.getElementById('')
+		    
         break;
         case 'Pie':
 
