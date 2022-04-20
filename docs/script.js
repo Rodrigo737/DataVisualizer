@@ -95,6 +95,7 @@ function processData(csv){
     }      
     console.log("CSV AFTER CLEANING", csvArray);              
     createTable(csvArray);
+    createPie(csvArray);
 }
 function createTable(tableData){                                  //Display table for CSV FILE 
     google.charts.load('current', {'packages':['table']});	
@@ -108,6 +109,23 @@ function createTable(tableData){                                  //Display tabl
        table.draw(data, options);
     }
 }
+
+function createPie(tableData){                                  //Population by state in current year (PIE)   rows 12-62  
+    //clean array to fit into pie creator
+    //use column #0 for state and #121 for year 2020
+    let pieData = [];
+    let row = [];
+    for(let i = 12; i++; i< 63){
+        let row = [];
+        row.push(tableData[i, 0]);
+        row.push(tableData[i,121]); 
+        pieData.push(row);
+    }
+    console.log("PIE DATA");
+    console.log(pieData);   
+}
+
+
 /*
     load a csv file when document loads
     automatically display table         no website to set this as default tab
