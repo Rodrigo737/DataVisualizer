@@ -113,10 +113,10 @@ function createPie(tableData){                                  //Population by 
     function drawChart() {
         var data = google.visualization.arrayToDataTable(pieData);
         var options = {
-        title: chartTitle,
-        width: 1440,
-        height: 720,
-        pieHole: 0.4
+		title: chartTitle,
+		width: 1440,
+		height: 720,
+		pieHole: 0.4
         };
         var chart = new google.visualization.PieChart(document.getElementById('Pie'));
         chart.draw(data, options);
@@ -146,9 +146,9 @@ function createBar(tableData){
     function drawChart() {
         var data = google.visualization.arrayToDataTable(barData);
         var options = {
-        title: chartTitle,
-        width: 1440,
-        height: 720
+		title: chartTitle,
+		width: 1440,
+		height: 720
         };
         var chart = new google.visualization.BarChart(document.getElementById('Bar'));
         chart.draw(data, options);
@@ -179,6 +179,7 @@ function createLine(tableData){         //Row 0 and 1, columns
             title: chartTitle,
             width: 1440,
             height: 720,
+            explorer: { axis: 'horizontal' },
             hAxis: {
                 title: 'Year'
             },
