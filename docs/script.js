@@ -124,6 +124,18 @@ function createPie(tableData){                                  //Population by 
     }
     console.log("PIE DATA");
     console.log(pieData);
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    let chartTitle = "Population of all US states in " + selectedYear;
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable(pieData);
+        var options = {
+        title: chartTitle,
+        legend: { position: 'bottom' }
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('Pie'));
+        chart.draw(data, options);
+    };  
 }
 
 
