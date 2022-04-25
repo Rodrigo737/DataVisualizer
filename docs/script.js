@@ -159,7 +159,7 @@ function createLine(tableData){         //Row 0 and 1, columns
     let lineData = [];
     let row =["Year", "Population"];
     lineData.push(row);
-    for(let i = 94; i < 121; i++ ){
+    for(let i = 109; i < 123; i++ ){
         let row = [];
         let year = tableData[0][i];
         let pop = Number(tableData[1][i]);
@@ -179,7 +179,6 @@ function createLine(tableData){         //Row 0 and 1, columns
             title: chartTitle,
             width: 1440,
             height: 720,
-            explorer: { axis: 'horizontal' },
             hAxis: {
                 title: 'Year'
             },
@@ -194,7 +193,6 @@ function createLine(tableData){         //Row 0 and 1, columns
 }
 
 $("document").ready(function(){//on document boot, load in default CSV file 
-    //console.log(fileName);
     $.ajax({
         type: "GET",
         url: "https://raw.githubusercontent.com/Rodrigo737/DataVisualizer/main/population_usafacts.csv",
