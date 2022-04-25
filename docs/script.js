@@ -27,18 +27,6 @@ function displayGraph(event, option){          //checks user input of 4 tabs, di
     }
     document.getElementById(option).style.display = "block";                            //changes the selected tab to give it the active tag
     event.currentTarget.className += " active";
-   //call chart creators here make csvArray a public variabole
-    if(option = "Pie"){
-        console.log("Pie");
-        createPie(csvArray);
-    }
-    if(option = "Bar"){
-        console.log("Bar");
-    }
-    if(option = "Line"){
-        console.log("Line");
-    }
-    }
 }
 function handleFile(input){                      //check that file is a csv and browser can handle it                                     
     if(input){
@@ -88,6 +76,7 @@ function processData(csv){
     }      
     console.log("CSV AFTER CLEANING", csvArray);              
     createTable(csvArray);
+    createPie(csvArray);
 }
 function createTable(tableData){                                  //Display table for CSV FILE 
     google.charts.load('current', {'packages':['table']});	
