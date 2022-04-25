@@ -16,11 +16,7 @@ function displayClientInfo(){
 
 }
 function displayGraph(event, option){          //checks user input of 4 tabs, displays proper graph
-    /*   INPUT CODE HERE
-        ALSO
-            EACH OPTION SHOULD LOAD THE NEW GOOGLE CHART WHEN SELECTED
-            ALSO SHOULD KEEP BUTTON HIGHLIGHTED AND REMOVE PREVIOUS GRAPH/DISPLAY WHEN CHANGED\
-    */
+    
     document.getElementById('Table').style.display = "none";//hides all elements
     document.getElementById('Pie').style.display = "none";
     document.getElementById('Bar').style.display = "none";
@@ -31,20 +27,17 @@ function displayGraph(event, option){          //checks user input of 4 tabs, di
     }
     document.getElementById(option).style.display = "block";                            //changes the selected tab to give it the active tag
     event.currentTarget.className += " active";
-  
-    switch(option){
-        case 'Table':
-		    
-        break;
-        case 'Pie':
-
-        break;
-        case 'Bar':
-
-        break;
-        case 'Line':
-        
-        break; 
+   //call chart creators here make csvArray a public variabole
+    if(option = "Pie"){
+        console.log("Pie");
+        createPie(csvArray);
+    }
+    if(option = "Bar"){
+        console.log("Bar");
+    }
+    if(option = "Line"){
+        console.log("Line");
+    }
     }
 }
 function handleFile(input){                      //check that file is a csv and browser can handle it                                     
@@ -95,7 +88,6 @@ function processData(csv){
     }      
     console.log("CSV AFTER CLEANING", csvArray);              
     createTable(csvArray);
-    createPie(csvArray);
 }
 function createTable(tableData){                                  //Display table for CSV FILE 
     google.charts.load('current', {'packages':['table']});	
