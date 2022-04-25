@@ -132,7 +132,7 @@ function createBar(tableData){
     let barData = [];
     let row =["Age", "Population"];   //adds header
     barData.push(row);
-    for(let i = 2; i < 9; i++ ){
+    for(let i = 2; i < 10; i++ ){
         let row = [];
         let Age = tableData[i][0];
         let pop = Number(tableData[i][121]); 
