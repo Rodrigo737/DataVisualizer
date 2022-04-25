@@ -148,7 +148,8 @@ function createBar(tableData){
         var options = {
 		title: chartTitle,
 		width: 1440,
-		height: 720
+		height: 720,
+	        legend: { position: "none" }
         };
         var chart = new google.visualization.BarChart(document.getElementById('Bar'));
         chart.draw(data, options);
@@ -159,7 +160,7 @@ function createLine(tableData){         //Row 0 and 1, columns
     let lineData = [];
     let row =["Year", "Population"];
     lineData.push(row);
-    for(let i = 90; i < 123; i++ ){
+    for(let i = 103; i < 123; i++ ){
         let row = [];
         let year = tableData[0][i];
         let pop = Number(tableData[1][i]);
@@ -185,7 +186,7 @@ function createLine(tableData){         //Row 0 and 1, columns
             vAxis: {
                 title: 'Population'
             },
-            explorer: { axis: 'horizontal' }
+	    legend: { position: "none" }
         };
         var chart = new google.visualization.LineChart(document.getElementById('Line'));
         chart.draw(data, options);
@@ -198,8 +199,8 @@ $("document").ready(function(){//on document boot, load in default CSV file
         url: "https://raw.githubusercontent.com/Rodrigo737/DataVisualizer/main/population_usafacts.csv",
         dataType: "text",
         success: function(data) {
-          console.log("AJAX SUCCESS");
-	  processData(data);
+            console.log("AJAX SUCCESS");
+	    processData(data);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) { 
             console.log ("ajax failed");
