@@ -103,6 +103,9 @@ function createPie(tableData){                                  //Population by 
         row.push(pop);
         pieData.push(row);
     }
+    pieData.sort(function(a,b) {                    //sorts data so bar graph looks better
+        return a[1]-b[1];
+    });
     console.log("PIE DATA");
     console.log(pieData);
     google.charts.load('current', {'packages':['corechart']});
@@ -119,6 +122,35 @@ function createPie(tableData){                                  //Population by 
         var chart = new google.visualization.PieChart(document.getElementById('Pie'));
         chart.draw(data, options);
     };  
+}
+function createBar(tableData){                                  
+    /*year sets the column, since year is going to be 2020 to start
+    Let Selected = getElementById("BarSlider");     //logic: gets difference of year and applies it to the column to get the right column for the selected year
+    //let columnNum = 121 - (2020 - Selected);
+    */let barData = [];
+    let row =["Age", "Population"];   //adds header
+    barData.push(row);
+    for(let i = 2; i < 9; i++ ){
+        let row = [];
+        let Age = tableData[i][0];
+        let pop = Number(tableData[i][121]); 
+        row.push(Age);
+        row.push(pop);
+        barData.push(row);
+    }
+    console.log("BAR DATA");
+    console.log(barData);
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    let chartTitle = "Population in 2020 by Age Group";
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable(pieData);
+        var options = {
+        title: chartTitle,
+        };
+        var chart = new google.visualization.BarChart(document.getElementById('Bar'));
+        chart.draw(data, options);
+    }; 
 }
 
 
