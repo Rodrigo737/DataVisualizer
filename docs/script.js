@@ -159,7 +159,7 @@ function createLine(tableData){         //Row 0 and 1, columns
     let lineData = [];
     let row =["Year", "Population"];
     lineData.push(row);
-    for(let i = 109; i < 123; i++ ){
+    for(let i = 90; i < 123; i++ ){
         let row = [];
         let year = tableData[0][i];
         let pop = Number(tableData[1][i]);
@@ -184,12 +184,12 @@ function createLine(tableData){         //Row 0 and 1, columns
             },
             vAxis: {
                 title: 'Population'
-            }
+            },
+            explorer: { axis: 'horizontal' }
         };
         var chart = new google.visualization.LineChart(document.getElementById('Line'));
         chart.draw(data, options);
     }; 
-
 }
 
 $("document").ready(function(){//on document boot, load in default CSV file 
