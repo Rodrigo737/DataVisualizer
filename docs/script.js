@@ -149,6 +149,8 @@ function createBar(tableData){
         var data = google.visualization.arrayToDataTable(barData);
         var options = {
         title: chartTitle,
+        width: 1440,
+        height: 720
         };
         var chart = new google.visualization.BarChart(document.getElementById('Bar'));
         chart.draw(data, options);
