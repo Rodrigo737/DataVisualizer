@@ -77,6 +77,7 @@ function processData(csv){
     console.log("CSV AFTER CLEANING", csvArray);              
     createTable(csvArray);
     createPie(csvArray);
+    createBar(csvArray);
 }
 function createTable(tableData){                                  //Display table for CSV FILE 
     google.charts.load('current', {'packages':['table']});	
