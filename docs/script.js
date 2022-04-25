@@ -113,7 +113,7 @@ function createPie(tableData){                                  //Population by 
     google.charts.setOnLoadCallback(drawChart);
     let chartTitle = "Population of all US states in 2020";
     function drawChart() {
-        var data = google.visualization.arrayToDataTable(pieData);
+        var data = google.visualization.arrayToDataTable(barData);
         var options = {
         title: chartTitle,
         width: 1440,
