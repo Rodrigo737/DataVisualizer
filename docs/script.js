@@ -112,7 +112,8 @@ function createTable(tableData){                                  //Display tabl
 
 function createPie(tableData){                                  //Population by state in current year (PIE)   rows 10-60
     let pieData = [];
-    let row = ["State", "Population"];           //adds header
+    let selectedYear = 2020;
+    let row =["State", "Population"];           //adds header
     pieData.push(row);
     for(let i = 10; i < 60; i++ ){
         let row = [];
@@ -124,6 +125,7 @@ function createPie(tableData){                                  //Population by 
     }
     console.log("PIE DATA");
     console.log(pieData);
+                //google charts code here
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
     let chartTitle = "Population of all US states in " + selectedYear;
