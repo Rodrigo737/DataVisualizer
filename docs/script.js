@@ -6,14 +6,16 @@ function exitSite(){
     close();
 }
 function displayProjectInfo(){                                       
-    alert('Rodrigo Dutra' + '\n' + 'Data Visualization Project' + '\n');  
+    alert('This website loads in a CSV file hosted on the server.' + '\n' 
+    + 'Use the different tabs to switch between the chart options.' + '\n'
+    + 'Use sliders to change the data ranges of each graph. ' + '\n'
+    + 'Made by Rodrigo Dutra ' + '\n'
+    );  
 }
 function displayClientInfo(){    
     alert('Browser: ' + navigator.appCodeName + '\n' + 'Version: ' +  navigator.appVersion +  '\n' + 'Operating System: ' + navigator.platform + '\n' + 'Java Enabled: ' + navigator.javaEnabled() + '\n' + 'Cookies enabled: ' + navigator.cookieEnabled);
-
 }
 function displayGraph(event, option){          //checks user input of 4 tabs, displays proper graph
-    
     document.getElementById('Table').style.display = "none";//hides all elements
     document.getElementById('Pie').style.display = "none";
     document.getElementById('Bar').style.display = "none";
@@ -89,8 +91,7 @@ function createTable(tableData){                                  //Display tabl
        table.draw(data, options);
     }
 }
-
-function createPie(tableData){                                  //Population by state in current year (PIE)   rows 10-60
+function createPie(tableData){                                  
     let pieData = [];
     let row =["State", "Population"];           //adds header
     pieData.push(row);
@@ -123,10 +124,6 @@ function createPie(tableData){                                  //Population by 
     };  
 }
 function createBar(tableData){                                  
-    /*year sets the column, since year is going to be 2020 to start
-    Let Selected = getElementById("BarSlider");     //logic: gets difference of year and applies it to the column to get the right column for the selected year
-    //let columnNum = 121 - (2020 - Selected);
-    */
     let barData = [];
     let row =["Age", "Population"];   //adds header
     barData.push(row);
@@ -155,8 +152,7 @@ function createBar(tableData){
         chart.draw(data, options);
     }; 
 }
-
-function createLine(tableData){         //Row 0 and 1, columns 
+function createLine(tableData){         
     let lineData = [];
     let row =["Year", "Population"];
     lineData.push(row);
@@ -193,7 +189,7 @@ function createLine(tableData){         //Row 0 and 1, columns
     }; 
 }
 
-$("document").ready(function(){//on document boot, load in default CSV file 
+$("document").ready(function(){		//on document boot, load in default CSV file 
     $.ajax({
         type: "GET",
         url: "https://raw.githubusercontent.com/Rodrigo737/DataVisualizer/main/population_usafacts.csv",
