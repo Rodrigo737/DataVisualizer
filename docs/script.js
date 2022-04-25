@@ -112,7 +112,6 @@ function createTable(tableData){                                  //Display tabl
 
 function createPie(tableData){                                  //Population by state in current year (PIE)   rows 10-60
     let pieData = [];
-    let selectedYear = 2020;
     let row =["State", "Population"];           //adds header
     pieData.push(row);
     for(let i = 10; i < 60; i++ ){
@@ -128,11 +127,13 @@ function createPie(tableData){                                  //Population by 
                 //google charts code here
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
-    let chartTitle = "Population of all US states in " + selectedYear;
+    let chartTitle = "Population of all US states in 2020";
     function drawChart() {
         var data = google.visualization.arrayToDataTable(pieData);
         var options = {
         title: chartTitle,
+        width: 1440,
+        height: 720,
         legend: { position: 'bottom' }
         };
         var chart = new google.visualization.PieChart(document.getElementById('Pie'));
