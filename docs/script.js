@@ -1,6 +1,3 @@
-//no login needed
-//automatically read csv file 
-//has one preset and one CAN BE LLOADED by user
 function printMessage(mess){
     document.getElementById('messageOutput').innerHTML = '';
     document.getElementById('messageOutput').append(mess);    
@@ -177,7 +174,7 @@ function createLine(tableData){         //Row 0 and 1, columns
     google.charts.setOnLoadCallback(drawChart);
     let chartTitle = "Population of US over time";
     function drawChart() {
-        var data = google.visualization.arrayToDataTable(barData);
+        var data = google.visualization.arrayToDataTable(lineData);
         var options = {
             title: chartTitle,
             width: 1440,
@@ -194,18 +191,7 @@ function createLine(tableData){         //Row 0 and 1, columns
     }; 
 
 }
-/*
-    load a csv file when document loads
-    automatically display table         no website to set this as default tab
-    function that creates 4 google charts when switched between 
-    
-    DATA OPTIONS WITH THIS NEW POPULATION CSV
-    Population by state in current year (PIE)   lines 13-63  
-    General pop by year (LINE)                  lines 1-2
-    General pop by AGE of current year (BAR) lines 4-11
 
-
-*/
 $("document").ready(function(){//on document boot, load in default CSV file 
     //console.log(fileName);
     $.ajax({
