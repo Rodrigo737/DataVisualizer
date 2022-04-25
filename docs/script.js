@@ -157,7 +157,42 @@ function createBar(tableData){
     }; 
 }
 
+function createLine(tableData){         //Row 0 and 1, columns 
+    let lineData = [];
+    let row =["Year", "Population"];
+    lineData.push(row);
+    for(let i = 80; i < 121; i++ ){
+        let row = [];
+        let year = tableData[0][i];
+        let pop = Number(tableData[1][i]);
+        row.push(year);
+        row.push(pop);
+        lineData.push(row);
+    }
+    console.log("Line Data");
+    console.log(lineData);
+    
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    let chartTitle = "Population of US over time";
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable(barData);
+        var options = {
+            title: chartTitle,
+            width: 1440,
+            height: 720,
+            hAxis: {
+                title: 'Year'
+            },
+            vAxis: {
+                title: 'Population'
+            }
+        };
+        var chart = new google.visualization.LineChart(document.getElementById('Line'));
+        chart.draw(data, options);
+    }; 
 
+}
 /*
     load a csv file when document loads
     automatically display table         no website to set this as default tab
