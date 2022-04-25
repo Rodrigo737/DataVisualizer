@@ -113,7 +113,7 @@ function createPie(tableData){                                  //Population by 
     google.charts.setOnLoadCallback(drawChart);
     let chartTitle = "Population of all US states in 2020";
     function drawChart() {
-        var data = google.visualization.arrayToDataTable(barData);
+        var data = google.visualization.arrayToDataTable(pieData);
         var options = {
         title: chartTitle,
         width: 1440,
@@ -128,7 +128,8 @@ function createBar(tableData){
     /*year sets the column, since year is going to be 2020 to start
     Let Selected = getElementById("BarSlider");     //logic: gets difference of year and applies it to the column to get the right column for the selected year
     //let columnNum = 121 - (2020 - Selected);
-    */let barData = [];
+    */
+    let barData = [];
     let row =["Age", "Population"];   //adds header
     barData.push(row);
     for(let i = 2; i < 9; i++ ){
@@ -145,7 +146,7 @@ function createBar(tableData){
     google.charts.setOnLoadCallback(drawChart);
     let chartTitle = "Population in 2020 by Age Group";
     function drawChart() {
-        var data = google.visualization.arrayToDataTable(pieData);
+        var data = google.visualization.arrayToDataTable(barData);
         var options = {
         title: chartTitle,
         };
