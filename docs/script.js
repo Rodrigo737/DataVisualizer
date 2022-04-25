@@ -159,7 +159,7 @@ function createLine(tableData){         //Row 0 and 1, columns
     let lineData = [];
     let row =["Year", "Population"];
     lineData.push(row);
-    for(let i = 80; i < 121; i++ ){
+    for(let i = 94; i < 121; i++ ){
         let row = [];
         let year = tableData[0][i];
         let pop = Number(tableData[1][i]);
