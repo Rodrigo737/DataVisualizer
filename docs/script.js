@@ -105,7 +105,6 @@ function createPie(tableData){                                  //Population by 
     }
     console.log("PIE DATA");
     console.log(pieData);
-                //google charts code here
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
     let chartTitle = "Population of all US states in 2020";
@@ -115,7 +114,7 @@ function createPie(tableData){                                  //Population by 
         title: chartTitle,
         width: 1440,
         height: 720,
-        legend: { position: 'bottom' }
+        pieHole: 0.4
         };
         var chart = new google.visualization.PieChart(document.getElementById('Pie'));
         chart.draw(data, options);
