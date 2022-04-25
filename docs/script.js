@@ -78,6 +78,7 @@ function processData(csv){
     createTable(csvArray);
     createPie(csvArray);
     createBar(csvArray);
+    createLine(csvArray);
 }
 function createTable(tableData){                                  //Display table for CSV FILE 
     google.charts.load('current', {'packages':['table']});	
