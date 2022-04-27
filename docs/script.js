@@ -91,14 +91,16 @@ function createTable(tableData){                                  //Display tabl
        table.draw(data, options);
     }
 }
-function createPie(tableData){                                  
+function createPie(tableData){           
+    let selected = $("#pieSlider").val();     //logic: gets difference of year and applies it to the column to get the right column for the selected year
+    let columnNum = 121 - (2020 - selected);
     let pieData = [];
     let row =["State", "Population"];           //adds header
     pieData.push(row);
-    for(let i = 10; i < 60; i++ ){
+    for(let i = 10; i < 60; i++){
         let row = [];
         let state = tableData[i][0];
-        let pop = Number(tableData[i][121]); 
+        let pop = Number(tableData[i][columnNum]); 
         row.push(state);
         row.push(pop);
         pieData.push(row);
@@ -123,14 +125,16 @@ function createPie(tableData){
         chart.draw(data, options);
     };  
 }
-function createBar(tableData){                                  
+function createBar(tableData){     
+    let selected = $("#pieSlider").val();     //logic: gets difference of year and applies it to the column to get the right column for the selected year
+    let yearColumn = 121 - (2020 - selected);  
     let barData = [];
     let row =["Age", "Population"];   //adds header
     barData.push(row);
     for(let i = 2; i < 10; i++ ){
         let row = [];
         let Age = tableData[i][0];
-        let pop = Number(tableData[i][121]); 
+        let pop = Number(tableData[i][yearColumn]); 
         row.push(Age);
         row.push(pop);
         barData.push(row);
@@ -152,14 +156,16 @@ function createBar(tableData){
         chart.draw(data, options);
     }; 
 }
-function createLine(tableData){         
+function createLine(tableData){        
+    let selected = Number($("#lineDropdown").val());
+    let stateRow  = 9 + selected;
     let lineData = [];
     let row =["Year", "Population"];
     lineData.push(row);
     for(let i = 103; i < 123; i++ ){
         let row = [];
         let year = tableData[0][i];
-        let pop = Number(tableData[1][i]);
+        let pop = Number(tableData[stateRow][i]);
         row.push(year);
         row.push(pop);
         lineData.push(row);
@@ -205,3 +211,22 @@ $("document").ready(function(){		//on document boot, load in default CSV file
       });
     printMessage("Welcome to Rodrigo's Data Visualization Project, a defualt CSV file has been loaded."); 
 });
+
+$('#pieSlider').on('change', function(){               //detects when pieslider gets a new value
+    let value = $('#pieSlider').val();
+    console.log(value);
+    $("label[for=pieSlider]").html("Year: " + value ); 
+    createPie(csvArray);
+});
+    
+$('#barSlider').on('change', function(){               //detects for bar slider changes
+    let value = $('#barSlider').val();
+    console.log(value);
+    $("label[for=barSlider]").html("Year: " + value ); 
+    createBar(csvArray);
+});
+
+$('#lineDropdown').on('change', function(){             //detects when new dropdown choice
+    createLine(csvArray);
+});
+
