@@ -20,12 +20,27 @@ function displayGraph(event, option){          //checks user input of 4 tabs, di
     document.getElementById('Pie').style.display = "none";
     document.getElementById('Bar').style.display = "none";
     document.getElementById('Line').style.display = "none";
+    document.getElementById('pieContainer').style.display = "none";
+    document.getElementById('barContainer').style.display = "none";
+    document.getElementById('lineContainer').style.display = "none";
+	
     tabButton = document.getElementsByClassName("tabButton");
     for (i = 0; i < tabButton.length; i++) {
         tabButton[i].className = tabButton[i].className.replace(" active", "");         //clears all selected tabs
     }
     document.getElementById(option).style.display = "block";                            //changes the selected tab to give it the active tag
     event.currentTarget.className += " active";
+    switch(option){
+	case "Pie":
+	    document.getElementById('pieContainer').style.display = "block";
+	break;
+	case "Bar":
+	    document.getElementById('barContainer').style.display = "block";
+	break;
+	case "Line":
+	    document.getElementById('lineContainer').style.display = "block";
+	break;
+    }    
 }
 function handleFile(input){                      //check that file is a csv and browser can handle it                                     
     if(input){
