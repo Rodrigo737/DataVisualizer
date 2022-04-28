@@ -160,7 +160,7 @@ function createBar(tableData){
     console.log(barData);
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
-    let chartTitle = `Population in 2020 ${year} by Age Group`;
+    let chartTitle = `Population in ${year} by Age Group`;
     function drawChart() {
         var data = google.visualization.arrayToDataTable(barData);
         var options = {
