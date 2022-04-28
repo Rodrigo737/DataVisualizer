@@ -109,6 +109,7 @@ function createTable(tableData){                                  //Display tabl
 function createPie(tableData){           
     let selected = $("#pieSlider").val();     //logic: gets difference of year and applies it to the column to get the right column for the selected year
     let columnNum = 121 - (2020 - selected);
+    let year = tableData[0][columnNum];
     let pieData = [];
     let row =["State", "Population"];           //adds header
     pieData.push(row);
@@ -127,7 +128,7 @@ function createPie(tableData){
     console.log(pieData);
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
-    let chartTitle = "Population of all US states in 2020";
+    let chartTitle = `Population of all US states in ${year}`;
     function drawChart() {
         var data = google.visualization.arrayToDataTable(pieData);
         var options = {
@@ -143,6 +144,7 @@ function createPie(tableData){
 function createBar(tableData){     
     let selected = $("#pieSlider").val();     //logic: gets difference of year and applies it to the column to get the right column for the selected year
     let yearColumn = 120 - (2020 - selected);  
+    let year = tableData[0][yearColumn];
     let barData = [];
     let row =["Age", "Population"];   //adds header
     barData.push(row);
@@ -158,7 +160,7 @@ function createBar(tableData){
     console.log(barData);
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
-    let chartTitle = "Population in 2020 by Age Group";
+    let chartTitle = `Population in 2020 ${year} by Age Group`;
     function drawChart() {
         var data = google.visualization.arrayToDataTable(barData);
         var options = {
@@ -174,6 +176,7 @@ function createBar(tableData){
 function createLine(tableData){        
     let selected = Number($("#lineDropdown").val());
     let stateRow  = 9 + selected;
+    let state = tableData[stateRow][0];
     let lineData = [];
     let row =["Year", "Population"];
     lineData.push(row);
@@ -190,7 +193,7 @@ function createLine(tableData){
     
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
-    let chartTitle = "Population of US over time";
+    let chartTitle = `Population of ${state} over time`;
     function drawChart() {
         var data = google.visualization.arrayToDataTable(lineData);
         var options = {
