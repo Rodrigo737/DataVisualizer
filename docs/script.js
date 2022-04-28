@@ -142,7 +142,7 @@ function createPie(tableData){
 }
 function createBar(tableData){     
     let selected = $("#pieSlider").val();     //logic: gets difference of year and applies it to the column to get the right column for the selected year
-    let yearColumn = 121 - (2020 - selected);  
+    let yearColumn = 120 - (2020 - selected);  
     let barData = [];
     let row =["Age", "Population"];   //adds header
     barData.push(row);
