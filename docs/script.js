@@ -177,7 +177,7 @@ function createLine(tableData){
     let lineData = [];
     let row =["Year", "Population"];
     lineData.push(row);
-    for(let i = 103; i < 123; i++ ){
+    for(let i = 102; i < 122; i++ ){
         let row = [];
         let year = tableData[0][i];
         let pop = Number(tableData[stateRow][i]);
