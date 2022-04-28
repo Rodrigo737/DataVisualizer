@@ -223,25 +223,26 @@ $("document").ready(function(){		//on document boot, load in default CSV file
             console.log ("ajax failed");
             console.log("Status: " + textStatus); alert("Error: " + errorThrown); 
         }       
-      });
-    printMessage("Welcome to Rodrigo's Data Visualization Project, a defualt CSV file has been loaded."); 
-});
+    });
+    printMessage("Welcome to Rodrigo's Data Visualization Project, a defualt CSV file has been loaded.");
+	$('#pieSlider').on('change', function(){               //detects when pieslider gets a new value
+        let value = $('#pieSlider').val();
+        console.log("Pie slider moved");
+        console.log(value);
+        $("label[for=pieSlider]").html("Year: " + value ); 
+        createPie(csvArray);
+    });
+        
+    $('#barSlider').on('change', function(){               //detects for bar slider changes
+        let value = $('#barSlider').val();
+        console.log("Bar slider moved");
+        console.log(value);
+        $("label[for=barSlider]").html("Year: " + value ); 
+        createBar(csvArray);
+    });
 
-$('#pieSlider').on('change', function(){               //detects when pieslider gets a new value
-    let value = $('#pieSlider').val();
-    console.log(value);
-    $("label[for=pieSlider]").html("Year: " + value ); 
-    createPie(csvArray);
+    $('#lineDropdown').on('change', function(){             //detects when new dropdown choice
+        console.log("New dropdown picked");
+        createLine(csvArray);
+    });
 });
-    
-$('#barSlider').on('change', function(){               //detects for bar slider changes
-    let value = $('#barSlider').val();
-    console.log(value);
-    $("label[for=barSlider]").html("Year: " + value ); 
-    createBar(csvArray);
-});
-
-$('#lineDropdown').on('change', function(){             //detects when new dropdown choice
-    createLine(csvArray);
-});
-
